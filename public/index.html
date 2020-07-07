@@ -1,0 +1,178 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!DOCTYPE html>
+<html>
+
+
+
+<!-- Head -->
+<head>
+
+<title>Weather Forecast</title>
+
+<!-- For-Mobile-Apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Monaco Weather Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //For-Mobile-Apps -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="shortcut icon" href="#" />
+
+<!-- Index-Page-CSS -->	  <link rel="stylesheet" href="css/style.css"		 type="text/css" media="all">
+<!-- Owl-Carousel-CSS --> <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all">
+
+
+</head>
+<!-- Head -->
+
+
+<!-- Body -->
+<body >
+	<!-- Heading -->
+	<h1>Dự báo thời tiết</h1>
+	<!-- //Headng -->
+
+
+	<!-- Container -->
+	<div class="container">
+
+		<!-- Current-Weather-Widget -->
+		<div class="weather-widget agileits w3layouts">
+			<div class="place agileits w3layouts">
+
+				<div class="city agileits-w3layouts agileits w3layouts">
+					<p>Thành phố Hồ Chí Minh</p>
+				</div>
+
+				<div class="dmy agileits w3-agile w3layouts">
+					<script type="text/javascript">
+						var mydate=new Date()
+						var year=mydate.getYear()
+						if(year<1000)
+						year+=1900
+						var day=mydate.getDay()
+						var month=mydate.getMonth()
+						var daym=mydate.getDate()
+						if(daym<10)
+						daym="0"+daym
+						var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+						var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+						document.write(""+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"")
+					</script>
+				</div>
+
+				<!-- <div id="txt"></div> -->
+
+				<div class="w3temperatureaits agileits w3-agileits">
+					<div class="w3temperatureaits-grid w3-agileits wthreetemp">
+						<ul style="margin-left: 40px;" >
+							<li style="font-size: 30PX;padding: 20px;" class="agiletemp wthree agiletemphumidity w3-agile" id="txtTempreture">34.8 ° C - 117 ° F</li>
+							<li class="agiletemp wthree agiletemphumidity w3-agile" style="padding: 20px;font-size: 20PX">Độ ẩm: 60% </li>
+							<li class="agiletemp agileits-w3layouts agileinfo agiletempwind"style="padding: 20px;font-size: 20px">Cập nhật lúc: 20:42:03</li>
+						</ul>
+					</div>
+					
+					<div class="w3temperatureaits-grid w3-agile wthreestats">
+						
+					</div>
+					<div class="w3temperatureaits-grid w3tempimg">
+						<figure class="icons agileits w3layouts">
+							<canvas id="cloudy" width="100" class="w3-agileits" height="100"></canvas>
+						</figure>
+					</div>
+					<div class="clear"></div>
+				</div>
+
+				<div id="owl-demo" class="owl-carousel agileits text-center">
+					<!-- <div class="item w3threeitem w3threeitem1">
+						<h4>SUN</h4>
+						<figure class="icons agileits-w3layouts agileits w3layouts">
+							<canvas id="wind" width="50" height="50"></canvas>
+						</figure>
+						<h5>18°C</h5>
+						<h6>12°C</h6>
+					</div> -->
+					<div class="item w3threeitem agileinfo w3threeitem2" style="width: 630px;">
+						<h4>Một giờ nữa</h4>
+						<figure class="icons wthree agileits w3layouts">
+							<canvas id="sleet" width="50" class="w3ls" height="50"></canvas>
+						</figure>
+						<h5>Độ ẩm: 63%</h5>
+						<h6>Nhiệt độ: 33.6°C - 176.2°F</h6>
+					</div>
+					
+				</div>
+
+			</div>
+		</div>
+		<!-- //Current-Weather-Widget -->
+
+	</div>
+	<!-- //Container -->
+
+
+
+	<!-- //Footer -->
+
+
+		<!-- Default-JavaScript -->
+		 <!-- <script type="text/javascript" src="js/jquery-3.1.1.js"></script> -->
+		<script src="./js/jquery-2.1.4.min.js"></script>
+		<!-- Time-JavaScript -->
+			<script src="./js/action.js"> </script>
+		<!-- //Time-JavaScript -->
+
+		<!-- Weather-Widget-JavaScript -->
+			<script src="js/skycons.js"></script>
+			<script>
+				var icons = new Skycons({"color": "#FFFFFF"}),
+				list  = [
+					"clear-day"
+				],
+				i;
+				for(i = list.length; i--; )
+				icons.set(list[i], list[i]);
+				icons.play();
+			</script>
+			<script>
+				var icons = new Skycons({"color": "#FFFFFF"}),
+				list = [
+					"clear-night", "partly-cloudy-day",	"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind", "fog"
+				],
+				i;
+				for(i = list.length; i--; )
+				icons.set(list[i], list[i]);
+				icons.play();
+			</script>
+		<!--//Weather-Widget-JavaScript -->
+
+		<!-- Owl-Carousel-JavaScript -->
+			<script src="js/owl.carousel.js"></script>
+			<script>
+				$(document).ready(function() {
+					$("#owl-demo").owlCarousel({
+						autoPlay: 3000,
+						items : 5,
+						itemsDesktop : [1024,4],
+						itemsDesktopSmall : [640,3]
+					});
+				});
+			</script>
+		<!-- //Owl-Carousel-JavaScript -->
+
+	<!-- //Custom-JavaScript-File-Links -->
+
+
+
+</body>
+<!-- //Body -->
+
+
+
+</html>
